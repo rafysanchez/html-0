@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Esquerdo</title>
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+        #menu {
+            width: 250px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            transition: width 0.3s ease;
+        }
+        #menu.hidden {
+            width: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        #menu a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: #ecf0f1;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        #menu a:hover {
+            background-color: #34495e;
+        }
+        #content {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #ecf0f1;
+            transition: margin-left 0.3s ease;
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+        #toggleMenu {
+            cursor: pointer;
+            position: absolute;
+            left: 250px;
+            top: 20px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 10px;
+            border-radius: 4px;
+            transition: left 0.3s ease;
+        }
+        #toggleMenu.hidden {
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <a href="#" data-section="section1">Link 1</a>
+        <a href="#" data-section="section2">Link 2</a>
+        <a href="#" data-section="section3">Link 3</a>
+    </div>
+    <div id="toggleMenu"><<<</div>
+    <div id="content">
+        <div id="section1" class="section">Conteúdo da Seção 1</div>
+        <div id="section2" class="section">Conteúdo da Seção 2</div>
+        <div id="section3" class="section">Conteúdo da Seção 3</div>
+    </div>
+    <script>
+        document.getElementById('toggleMenu').addEventListener('click', function() {
+            document.getElementById('menu').classList.toggle('hidden');
+            this.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#menu a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.getElementById(this.dataset.section).classList.add('active');
+            });
+        });
+
+        // Inicialmente, mostrar a primeira seção
+        document.getElementById('section1').classList.add('active');
+    </script>
+</body>
+</html>

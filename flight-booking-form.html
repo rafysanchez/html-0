@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flight Booking Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+      html, body {
+        height: 100%;
+      }
+      body {
+        background-color: #f5f5dc;
+        color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .form-container {
+        background-color: white;
+        color: black;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 600px;
+      }
+      .nav-tabs .nav-link {
+        color: #800040;
+      }
+      .nav-tabs .nav-link.active {
+        color: #800040;
+        font-weight: bold;
+        border-bottom: 3px solid #800040;
+      }
+      .btn-primary {
+        background-color: #800040;
+        border-color: #800040;
+      }
+      .tab-pane {
+        padding-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1 class="text-center mb-4">Flight Booking Form</h1>
+      <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="flight-tab" data-bs-toggle="tab" data-bs-target="#flight" type="button" role="tab" aria-controls="flight" aria-selected="true">
+            <i class="bi bi-airplane"></i> Flight
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="trips-tab" data-bs-toggle="tab" data-bs-target="#trips" type="button" role="tab" aria-controls="trips" aria-selected="false">
+            <i class="bi bi-bag"></i> My Trips
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="checkin-tab" data-bs-toggle="tab" data-bs-target="#checkin" type="button" role="tab" aria-controls="checkin" aria-selected="false">
+            <i class="bi bi-check-circle"></i> Check-in
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="status-tab" data-bs-toggle="tab" data-bs-target="#status" type="button" role="tab" aria-controls="status" aria-selected="false">
+            <i class="bi bi-info-circle"></i> Flight Status
+          </button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="flight" role="tabpanel" aria-labelledby="flight-tab">
+          <form>
+            <div class="row mb-3">
+              <div class="col">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Flight From"
+                />
+              </div>
+              <div class="col">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Flight To"
+                />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Depart" />
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Return" />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col">
+                <select class="form-select">
+                  <option selected>Passenger</option>
+                </select>
+              </div>
+              <div class="col">
+                <select class="form-select">
+                  <option selected>Cabin</option>
+                </select>
+              </div>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary">
+                Show Flights
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="tab-pane fade" id="trips" role="tabpanel" aria-labelledby="trips-tab">
+          <h3>My Trips</h3>
+          <p>View and manage your upcoming trips here.</p>
+          <!-- Add content for My Trips tab -->
+        </div>
+        <div class="tab-pane fade" id="checkin" role="tabpanel" aria-labelledby="checkin-tab">
+          <h3>Check-in</h3>
+          <p>Check-in for your upcoming flight.</p>
+          <!-- Add content for Check-in tab -->
+        </div>
+        <div class="tab-pane fade" id="status" role="tabpanel" aria-labelledby="status-tab">
+          <h3>Flight Status</h3>
+          <p>Check the status of your flight.</p>
+          <!-- Add content for Flight Status tab -->
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Left Menu Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        #menu {
+            width: 250px;
+            background-color: #f1f1f1;
+            height: 100vh;
+            transition: 0.3s;
+        }
+        #menu.collapsed {
+            width: 50px;
+        }
+        #content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .menu-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .menu-item:hover {
+            background-color: #ddd;
+        }
+        .section {
+            display: none;
+        }
+        #toggle-btn {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #ddd;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <div id="toggle-btn">&lt;&lt;&lt;</div>
+        <div class="menu-item" data-target="section1">Link 1</div>
+        <div class="menu-item" data-target="section2">Link 2</div>
+        <div class="menu-item" data-target="section3">Link 3</div>
+    </div>
+    <div id="content">
+        <div id="section1" class="section">
+            <h2>Section 1</h2>
+            <p>This is the content for section 1.</p>
+        </div>
+        <div id="section2" class="section">
+            <h2>Section 2</h2>
+            <p>This is the content for section 2.</p>
+        </div>
+        <div id="section3" class="section">
+            <h2>Section 3</h2>
+            <p>This is the content for section 3.</p>
+        </div>
+    </div>
+
+    <script>
+        const menuItems = document.querySelectorAll('.menu-item');
+        const sections = document.querySelectorAll('.section');
+        const toggleBtn = document.getElementById('toggle-btn');
+        const menu = document.getElementById('menu');
+
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const targetId = item.getAttribute('data-target');
+                sections.forEach(section => {
+                    section.style.display = section.id === targetId ? 'block' : 'none';
+                });
+            });
+        });
+
+        toggleBtn.addEventListener('click', () => {
+            menu.classList.toggle('collapsed');
+            toggleBtn.textContent = menu.classList.contains('collapsed') ? '>>>' : '<<<';
+        });
+    </script>
+</body>
+</html>

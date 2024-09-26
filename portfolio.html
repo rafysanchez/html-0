@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaizen - Personal Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: #ffffff;
+            padding: 20px 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .nav-links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #333;
+        }
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 0;
+            background-color: #1c1c1c;
+            color: #ffffff;
+        }
+        .hero-content {
+            max-width: 50%;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ffd700;
+            color: #1c1c1c;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .hero-image {
+            position: relative;
+            width: 40%;
+        }
+        .hero-image img {
+            width: 100%;
+            height: auto;
+        }
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            bottom: -20px;
+            left: -20px;
+            border: 2px solid #ffd700;
+            z-index: -1;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 0;
+            background-color: #1c1c1c;
+            color: #ffffff;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-item .number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 50px 0;
+        }
+        .service-card {
+            width: calc(33.33% - 20px);
+            margin-bottom: 30px;
+            background-color: #1c1c1c;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .service-card h3 {
+            margin-bottom: 10px;
+            color: #ffd700;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">KAIZEN</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">Sobre nós</a>
+                <a href="#contact">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Olá eu sou o Cyrus Perim</h1>
+                <p>Especialista em negociação de vendas, palestrante e CEO da Kaizen. Há 8 anos entregando resultados e revolucionando o mercado digital.</p>
+                <a href="#contact" class="cta-button">Fale com um especialista</a>
+            </div>
+            <div class="hero-image">
+                <img src="/placeholder.svg" alt="Cyrus Perim">
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stat-item">
+            <div class="number">+1050</div>
+            <div>Campanhas realizadas</div>
+        </div>
+        <div class="stat-item">
+            <div class="number">+200M</div>
+            <div>Faturado repassado</div>
+        </div>
+        <div class="stat-item">
+            <div class="number">+600</div>
+            <div>Empreendedores atendidos</div>
+        </div>
+        <div class="stat-item">
+            <div class="number">+500K</div>
+            <div>Vendas realizadas</div>
+        </div>
+    </section>
+
+    <section class="services container">
+        <div class="service-card">
+            <h3>Recuperação</h3>
+            <p>Serviço de recuperação de dados e sistemas.</p>
+        </div>
+        <div class="service-card">
+            <h3>Atendimento</h3>
+            <p>Suporte e atendimento ao cliente personalizado.</p>
+        </div>
+        <div class="service-card">
+            <h3>Assinaturas</h3>
+            <p>Gerenciamento de assinaturas e serviços recorrentes.</p>
+        </div>
+        <div class="service-card">
+            <h3>Cobrança</h3>
+            <p>Soluções eficientes para cobrança e recuperação de crédito.</p>
+        </div>
+        <div class="service-card">
+            <h3>Gestão dos grupos de lançamento</h3>
+            <p>Estratégias para gerenciar e otimizar grupos de lançamento de produtos e serviços.</p>
+        </div>
+    </section>
+
+    <script>
+        // Add any necessary JavaScript here
+    </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabs Example</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: "Arial", sans-serif;
+      }
+      .container {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        width: 80%;
+        max-width: 800px;
+      }
+      .nav-tabs {
+        background-color: #e9ecef;
+        border-bottom: 2px solid #dee2e6;
+        padding: 10px 10px 0;
+      }
+      .nav-tabs .nav-link {
+        border: 2px solid transparent;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        color: #495057;
+        font-weight: 600;
+        padding: 12px 20px;
+        transition: all 0.3s ease;
+        margin-right: 5px;
+      }
+      .nav-tabs .nav-link:hover {
+        background-color: #dee2e6;
+        border-color: #dee2e6 #dee2e6 transparent;
+      }
+      .nav-tabs .nav-link.active {
+        background-color: #ffffff;
+        border-color: #dee2e6 #dee2e6 #ffffff;
+        color: #007bff;
+      }
+      .tab-content {
+        background-color: #ffffff;
+        padding: 30px;
+        border-left: 2px solid #dee2e6;
+        border-right: 2px solid #dee2e6;
+        border-bottom: 2px solid #dee2e6;
+        height: 400px; /* Altura fixa para todas as abas */
+        overflow-y: auto; /* Adiciona barra de rolagem vertical se necessário */
+      }
+      .tab-pane {
+        height: 100%; /* Garante que o conteúdo ocupe toda a altura disponível */
+      }
+      h3 {
+        color: #007bff;
+        margin-bottom: 20px;
+      }
+      p {
+        color: #6c757d;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="houses-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#houses"
+            type="button"
+            role="tab"
+            aria-controls="houses"
+            aria-selected="true"
+          >
+            Houses
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="beaches-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#beaches"
+            type="button"
+            role="tab"
+            aria-controls="beaches"
+            aria-selected="false"
+          >
+            Beaches
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="mountain-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#mountain"
+            type="button"
+            role="tab"
+            aria-controls="mountain"
+            aria-selected="false"
+          >
+            Mountain
+          </button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="houses"
+          role="tabpanel"
+          aria-labelledby="houses-tab"
+        >
+          <h3>Houses</h3>
+          <p>Information about houses goes here.</p>
+          <p>Information about houses goes here.</p>
+          <p>Information about houses goes here.</p>
+          <p>Information about houses goes here.</p>
+          <p>Information about houses goes here.</p>
+          <p>Information about houses goes here.</p>
+          <p>Information about houses goes here.</p>
+          <p>Information about houses goes here.</p>
+          <p>Information about houses goes here.</p>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="beaches"
+          role="tabpanel"
+          aria-labelledby="beaches-tab"
+        >
+          <h3>Beaches</h3>
+          <p>Information about beaches goes here.</p>
+          <!-- Adicione mais conteúdo aqui para simular uma quantidade similar à aba Houses -->
+        </div>
+        <div
+          class="tab-pane fade"
+          id="mountain"
+          role="tabpanel"
+          aria-labelledby="mountain-tab"
+        >
+          <h3>Mountain</h3>
+          <p>Information about mountains goes here.</p>
+          <!-- Adicione mais conteúdo aqui para simular uma quantidade similar à aba Houses -->
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

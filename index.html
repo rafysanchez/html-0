@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Pacman</title>
+    <style>
+        #gameBoard {
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            position: relative;
+            background-color: black; /* Add this line */
+        }
+        #pacman {
+            width: 30px;
+            height: 30px;
+            background-color: #FFFF00; /* Bright yellow */
+            border-radius: 50%;
+            position: absolute;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: #FFB8AE; /* Change this to a light pink color */
+            border-radius: 50%;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameBoard">
+        <div id="pacman"></div>
+    </div>
+    <p>Score: <span id="score">0</span></p>
+    <script>
+        const pacman = document.getElementById('pacman');
+        const gameBoard = document.getElementById('gameBoard');
+        const scoreElement = document.getElementById('score');
+        let score = 0;
+
+        let pacmanX = 0;
+        let pacmanY = 0;
+
+        function movePacman(e) {
+            switch(e.key) {
+                case 'ArrowUp':
+                    pacmanY = Math.max(0, pacmanY - 10);
+                    break;
+                case 'ArrowDown':
+                    pacmanY = Math.min(270, pacmanY + 10);
+                    break;
+                case 'ArrowLeft':
+                    pacmanX = Math.max(0, pacmanX - 10);
+                    break;
+                case 'ArrowRight':
+                    pacmanX = Math.min(270, pacmanX + 10);
+                    break;
+            }
+            pacman.style.top = pacmanY + 'px';
+            pacman.style.left = pacmanX + 'px';
+            checkCollision();
+        }
+
+        function createDot() {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            dot.style.left = Math.floor(Math.random() * 29) * 10 + 'px';
+            dot.style.top = Math.floor(Math.random() * 29) * 10 + 'px';
+            gameBoard.appendChild(dot);
+        }
+
+        function checkCollision() {
+            const dots = document.getElementsByClassName('dot');
+            for (let dot of dots) {
+                if (pacmanX < parseInt(dot.style.left) + 10 &&
+                    pacmanX + 30 > parseInt(dot.style.left) &&
+                    pacmanY < parseInt(dot.style.top) + 10 &&
+                    pacmanY + 30 > parseInt(dot.style.top)) {
+                    dot.remove();
+                    score++;
+                    scoreElement.textContent = score;
+                    createDot();
+                }
+            }
+        }
+
+        document.addEventListener('keydown', movePacman);
+
+        for (let i = 0; i < 10; i++) {
+            createDot();
+        }
+    </script>
+</body>
+</html>
